@@ -3,7 +3,7 @@ require_relative 'app'
 if ENV['SECRET']
   use Rack::Session::Cookie, secret: ENV['SECRET']
 else
-  warn 'SECRET not avaible, cookies will not be encrypted'
+  use Rack::Session::Cookie
 end
 
 use Rack::CommonLogger
